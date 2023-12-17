@@ -76,4 +76,5 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { host: 'csstudents.xyz', port: 3000 }
   config.hosts << "csstudents.xyz:3000"
+  config.action_mailer.delivery_method = :letter_opener_web
 end
