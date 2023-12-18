@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render 'profile/profile', profile: @profile %>
+
+<% if user_signed_in? && @profile.user == current_user %>
+  <div>
+    <%= link_to "Edit this profile", edit_profile_path %>
+  </div>
+<% end %>
+

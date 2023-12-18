@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :profiles
+  resource :profile, controller: 'profile'
+  get 'users', to: 'users#index'
+  get 'user_profiles/:user_id', to: 'profile#show', as: 'user_profile'
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   devise_for :users, controllers: {
     registrations: 'users/registrations'
